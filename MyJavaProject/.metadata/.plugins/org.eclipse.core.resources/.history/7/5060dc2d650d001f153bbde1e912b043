@@ -1,0 +1,57 @@
+package abstractmodifier;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByName;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.SendKeysAction;
+
+public class Demochrome {
+
+	public static void main(String[] args) {
+
+		//Installed Maven reporsitoy ->created Library folder ->paste files and go to project ->properties Java Build path-> Library Classpath-> Add Jars all jars from Library -> Apply and close
+		System.setProperty("webdriver.chrome.driver","D:\\SOFTWARE\\chromedriver-win32\\chromedriver.exe" );
+		
+		//A blank browser is called
+		WebDriver driver = new ChromeDriver();
+		
+		//---URL is called ---------- 
+		driver.get("https://omayo.blogspot.com/");
+		String Url1 = driver.getCurrentUrl();  //Print URL1
+		System.out.println("Working on the URL: "+Url1);
+		
+		driver.manage().window().maximize(); //To maximize the window 
+		//driver.manage().window().fullscreen();
+		
+		 driver.findElement(By.id("but2"));
+		// element.click();
+		 
+		  driver.findElement(By.name("q")).sendKeys("Riya Pawar"); 	//Send the message
+		  driver.findElement(By.className("classone")).sendKeys("Class");
+		 
+		  //driver.findElement(By.partialLinkText("onlytes")).getSize();
+		 //driver.findElement(By.xpath("//input[@id='confirm']")).click(); 
+		 //driver.findElement(By.cssSelector("#confirm")).click();
+
+		 //Get Text printed 
+		  String text = driver.findElement(By.id("pah")).getText();
+		  System.out.println("Following is the selected text:" +text);
+		  String str =  driver.getTitle();
+		  System.out.println("Title of the Page is: "+str); 		//Get URL printed 		
+		  
+			driver.findElement(By.linkText("onlytestingblog")).click();
+			String Url2 = driver.getCurrentUrl();
+			System.out.println("Clicked and redirected to URL: "+Url2); //Print URL2
+		  
+				  
+		  
+		 
+		
+
+	}
+
+}

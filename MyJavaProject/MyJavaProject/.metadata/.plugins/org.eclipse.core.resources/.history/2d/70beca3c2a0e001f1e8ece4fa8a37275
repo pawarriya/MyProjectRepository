@@ -1,0 +1,13 @@
+package seleniumdemo;
+
+import org.openqa.selenium.WebDriver;
+
+public class Browsers {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.Gecko.driver", "D:\\SOFTWARE\\IEServerDriver.exe");
+		WebDriver driver = new InternetExplorerDriver();
+	}
+
+}

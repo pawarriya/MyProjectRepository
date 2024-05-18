@@ -1,0 +1,11 @@
+package seleniumdemo;
+
+public class Browsers {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.Gecko.driver", "")
+		WebDriver driver = new GeckoDriver();
+	}
+
+}

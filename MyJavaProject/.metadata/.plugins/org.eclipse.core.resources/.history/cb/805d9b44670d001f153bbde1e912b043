@@ -1,0 +1,24 @@
+package seleniumdemo;
+
+public class Globalvariables {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		public void ExWait(WebElement element) throws IOException, InterruptedException {
+
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				wait.until(ExpectedConditions.elementToBeClickable(element));
+			} catch (Exception e) {
+				e.printStackTrace();
+				e.getMessage();
+				assertion.fail("***********Not Able To ExWait************");
+			}
+
+		}
+
+	}
+
+}

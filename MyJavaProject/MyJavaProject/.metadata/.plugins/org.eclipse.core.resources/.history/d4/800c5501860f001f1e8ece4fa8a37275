@@ -1,0 +1,25 @@
+package seleniumdemo;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class Waits {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String browser = 
+		if(browser = ""))
+		System.setProperty("webdriver.chrome.driver", "D:\\SOFTWARE\\chromedriver-win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+		
+		System.setProperty("webdriver.edge.driver", "D:\\SOFTWARE\\edgedriver_win32\\msedgedriver.exe");
+		driver = new EdgeDriver();
+		
+		System.setProperty("webdriver.ie.driver", "D:\\SOFTWARE\\IEDriverServer_Win32_3.141.59\\IEDriverServer.exe");
+		driver = new InternetExplorerDriver();
+		
+
+	}
+
+}

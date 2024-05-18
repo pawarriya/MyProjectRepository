@@ -1,0 +1,84 @@
+package seleniumdemo;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class SeleniumAPIcommands {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriver driver = null;
+		String browser = "Chrome";
+		if(browser.equalsIgnoreCase("chrome")) {
+			
+			System.setProperty("webdriver.chrome.driver", "D:\\SOFTWARE\\chromedriver-win32\\chromedriver.exe");
+			driver = new ChromeDriver();
+			
+		}else if(browser.equalsIgnoreCase("edge")){
+			System.setProperty("webdriver.edge.driver", "D:\\SOFTWARE\\edgedriver_win32\\msedgedriver.exe");
+			driver = new EdgeDriver();
+			
+			
+		}else if(browser.equalsIgnoreCase("ie")){
+			
+			System.setProperty("webdriver.ie.driver", "D:\\SOFTWARE\\IEDriverServer_Win32_3.141.59\\IEDriverServer.exe");
+			driver = new InternetExplorerDriver();
+			
+		
+}
+	
+		 driver.get("https://omayo.blogspot.com/"); //Mainwindo
+		 driver.manage().window().maximize();
+		String url1 = driver.getCurrentUrl();
+		System.out.println("Following is the URL: " +url1);
+		
+		String text1 =driver.findElement(By.id("pah")).getText();
+		System.out.println("Following is the test: " +text1);
+		
+		driver.findElement(By.id("but2")).click();
+		driver.findElement(By.id("ta1")).sendKeys("Hello");
+		
+		
+		String title1 = driver.getTitle();
+		System.out.println("Following is the page title: " +title1);
+		
+		String message = driver.findElement(By.id("rotb")).getAttribute("value");
+		System.out.println("Following is the stored message: "+message);
+		
+		
+		driver.findElement(By.linkText("Open a popup window")).click();  //Child Window will opened
+		driver.getWindowHandles();
+		
+		String Newwindow =driver.findElement(By.id("New Window")).getText();
+		System.out.println("First child window is: "+Newwindow);
+		
+		/*Thread.sleep(1000);
+		Set<String> hs = driver.getWindowHandles();
+		Iterator<String> itr = hs.iterator();
+		
+		while(itr.hasNext()) {
+			
+			itr.next();
+
+			driver.switchTo().window(Newwindow);
+			System.out.println("Title of Window is: "+Newwindow);
+		}
+		*/
+				
+		driver.close();
+		
+		
+		
+		
+		
+		
+	}
+
+}
