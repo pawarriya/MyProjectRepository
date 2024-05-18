@@ -15,6 +15,8 @@ public class MainClass {
 		p.Parent();	
 		System.out.println("-----------------------------------");
 
+System.out.println("Changes are done");
+
 		ChildInheritance c = new ChildInheritance();
 		c.Name = "Riya";
 		c.age = 27;
